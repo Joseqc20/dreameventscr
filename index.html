@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="es-CR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dream Events AMJ | Decoración de Eventos en Costa Rica</title>
+  <meta name="description" content="Dream Events AMJ crea decoraciones personalizadas para bodas, cumpleaños, baby showers, graduaciones, eventos corporativos, letras luminosas y fondos para fotos en Costa Rica." />
+  <meta name="theme-color" content="#071123" />
+
+  <style>
+    :root{
+      --navy:#041022;
+      --navy-2:#082044;
+      --navy-3:#10305d;
+      --blue:#1f6fb8;
+      --blue-2:#6fb6ff;
+      --ice:#d8ecff;
+      --gold:#d7a94c;
+      --gold-2:#f6d589;
+      --cream:#f7fbff;
+      --white:#ffffff;
+      --muted:#cbd1df;
+      --shadow: 0 22px 70px rgba(0,0,0,.35);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--white);
+      background:
+        radial-gradient(circle at top left, rgba(31,111,184,.28), transparent 34%),
+        radial-gradient(circle at top right, rgba(215,169,76,.16), transparent 30%),
+        linear-gradient(180deg, #020817 0%, var(--navy) 42%, #030712 100%);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    button,input,textarea{font:inherit}
+
+    .container{width:min(var(--max), calc(100% - 36px)); margin-inline:auto}
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      color:var(--gold-2);
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-size:.78rem;
+    }
+    .eyebrow::before,.eyebrow::after{
+      content:"";
+      width:34px;height:1px;background:linear-gradient(90deg, transparent, var(--gold));
+    }
+    .eyebrow::after{background:linear-gradient(90deg, var(--gold), transparent)}
+    .section-title{
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size:clamp(2rem, 4vw, 3.3rem);
+      line-height:1.05;
+      margin:12px 0 16px;
+      color:var(--cream);
+    }
+    .section-text{color:var(--muted);max-width:760px;font-size:1.03rem}
+    .gold{color:var(--gold-2)}
+    .blue{color:var(--blue-2)}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 22px;
+      border-radius:999px;
+      font-weight:800;
+      transition:.25s ease;
+      border:1px solid transparent;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .btn-primary{
+      background:linear-gradient(135deg, var(--gold), var(--gold-2));
+      color:#251600;
+      box-shadow:0 12px 28px rgba(215,169,76,.25);
+    }
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 36px rgba(215,169,76,.34)}
+    .btn-secondary{
+      border-color:rgba(255,255,255,.18);
+      background:rgba(255,255,255,.08);
+      backdrop-filter:blur(14px);
+      color:var(--cream);
+    }
+    .btn-secondary:hover{border-color:rgba(215,169,76,.55);transform:translateY(-2px)}
+
+    /* Header */
+    header{
+      position:fixed;top:0;left:0;right:0;z-index:50;
+      background:rgba(3,10,23,.78);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .nav{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:22px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;min-width:max-content;
+      font-weight:900;letter-spacing:.04em;
+    }
+    .brand img{
+      width:58px;height:58px;object-fit:cover;border-radius:50%;
+      border:1px solid rgba(215,169,76,.45);
+      box-shadow:0 0 24px rgba(215,169,76,.18);
+    }
+    .brand span{font-family:Georgia,'Times New Roman',serif;font-size:1.1rem;color:var(--cream)}
+    .menu{display:flex;align-items:center;gap:24px;color:var(--muted);font-size:.95rem}
+    .menu a:hover{color:var(--gold-2)}
+    .mobile-toggle{display:none;background:none;border:0;color:white;font-size:2rem;cursor:pointer}
+
+    /* Hero */
+    .hero{
+      position:relative;
+      min-height:100vh;
+      display:grid;
+      align-items:center;
+      padding:120px 0 80px;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;inset:0;
+      background:
+        linear-gradient(90deg, rgba(3,10,23,.92), rgba(8,32,68,.52), rgba(3,10,23,.88)),
+        url('images/principal.png') center/cover no-repeat;
+      transform:scale(1.04);
+      z-index:-2;
+    }
+    .hero::after{
+      content:"";position:absolute;inset:auto 0 0 0;height:190px;
+      background:linear-gradient(180deg, transparent, var(--navy));z-index:-1;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+    .hero h1{
+      font-family:Georgia,'Times New Roman',serif;
+      font-size:clamp(2.9rem, 7vw, 6.8rem);
+      line-height:.95;
+      max-width:760px;
+      color:var(--cream);
+      text-shadow:0 12px 48px rgba(0,0,0,.55);
+    }
+    .hero h1 em{font-style:italic;color:var(--blue-2)}
+    .hero p{margin:24px 0;color:#eef0f8;max-width:650px;font-size:1.13rem}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+    .hero-card{
+      background:rgba(4,16,34,.64);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(16px);
+      transform:rotate(1deg);
+    }
+    .hero-card img{border-radius:18px;aspect-ratio:4/3;object-fit:cover}
+    .hero-stats{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px;
+    }
+    .stat{
+      background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);
+      border-radius:18px;padding:16px;text-align:center;
+    }
+    .stat strong{display:block;color:var(--gold-2);font-size:1.4rem}
+    .stat small{color:var(--muted);font-size:.77rem}
+
+    /* Sections */
+    section{padding:92px 0}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+    .image-frame{
+      position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);
+      border:1px solid rgba(215,169,76,.22);
+      background:rgba(255,255,255,.06);
+    }
+    .image-frame::after{
+      content:"";position:absolute;inset:14px;border:1px solid rgba(255,255,255,.32);border-radius:18px;pointer-events:none;
+    }
+    .image-frame img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+
+    .about-list{display:grid;gap:14px;margin-top:28px}
+    .about-item{display:flex;gap:14px;align-items:flex-start;color:var(--muted)}
+    .about-item b{color:var(--cream)}
+    .check{
+      width:28px;height:28px;display:grid;place-items:center;flex:0 0 28px;
+      border-radius:50%;background:rgba(215,169,76,.16);color:var(--gold-2);
+      border:1px solid rgba(215,169,76,.35);
+      font-weight:900;
+    }
+
+    /* Services */
+    .services{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0))}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:38px}
+    .card{
+      position:relative;overflow:hidden;
+      background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:22px;padding:24px;min-height:214px;
+      transition:.25s ease;
+    }
+    .card:hover{transform:translateY(-6px);border-color:rgba(215,169,76,.48)}
+    .card::after{
+      content:"";position:absolute;right:-40px;bottom:-40px;width:120px;height:120px;border-radius:50%;
+      background:rgba(31,111,184,.16);
+    }
+    .card .icon{font-size:2rem;margin-bottom:14px}
+    .card h3{font-size:1.13rem;margin-bottom:10px;color:var(--cream)}
+    .card p{color:var(--muted);font-size:.94rem}
+
+    /* Feature band */
+    .feature-band{
+      border:1px solid rgba(215,169,76,.18);
+      background:
+        linear-gradient(90deg, rgba(31,111,184,.18), rgba(215,169,76,.09)),
+        rgba(255,255,255,.04);
+      border-radius:30px;
+      padding:34px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+      align-items:center;
+      margin-top:42px;
+    }
+    .feature-band h3{font-family:Georgia,'Times New Roman',serif;font-size:2rem;color:var(--cream);margin-bottom:10px}
+    .feature-band p{color:var(--muted)}
+    .mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .mini-grid img{border-radius:18px;aspect-ratio:16/10;object-fit:cover}
+
+    /* Gallery */
+    .filters{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+    .filter-btn{
+      background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:var(--muted);
+      border-radius:999px;padding:10px 16px;cursor:pointer;font-weight:700;transition:.2s ease;
+    }
+    .filter-btn.active,.filter-btn:hover{background:rgba(215,169,76,.18);color:var(--gold-2);border-color:rgba(215,169,76,.38)}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+    .gallery-item{
+      position:relative;border-radius:22px;overflow:hidden;min-height:250px;
+      border:1px solid rgba(255,255,255,.12);box-shadow:0 18px 44px rgba(0,0,0,.25);
+      cursor:pointer;
+    }
+    .gallery-item:nth-child(1){grid-column:span 2;grid-row:span 2}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;transition:.35s ease}
+    .gallery-item:nth-child(1) img{aspect-ratio:8/5}
+    .gallery-item:hover img{transform:scale(1.06)}
+    .overlay{
+      position:absolute;inset:auto 0 0 0;padding:22px;
+      background:linear-gradient(180deg, transparent, rgba(0,0,0,.86));
+    }
+    .overlay h3{font-size:1.15rem;color:var(--cream)}
+    .overlay p{font-size:.9rem;color:var(--muted)}
+
+    /* Pricing */
+    .pricing-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;margin-top:34px;align-items:start}
+    .price-table{overflow:hidden;border-radius:24px;border:1px solid rgba(255,255,255,.14);box-shadow:var(--shadow)}
+    table{width:100%;border-collapse:collapse;background:rgba(255,255,255,.05)}
+    th,td{padding:18px 20px;text-align:left;border-bottom:1px solid rgba(255,255,255,.08)}
+    th{background:rgba(215,169,76,.16);color:var(--gold-2);letter-spacing:.04em;text-transform:uppercase;font-size:.84rem}
+    td{color:var(--muted)}
+    td:last-child{color:var(--cream);font-weight:800;text-align:right}
+    tr:last-child td{border-bottom:0}
+    .notice{
+      border-radius:24px;padding:28px;background:rgba(31,111,184,.14);
+      border:1px solid rgba(111,182,255,.28);
+    }
+    .notice h3{color:var(--ice);font-size:1.35rem;margin-bottom:10px}
+    .notice p{color:var(--muted);margin-bottom:12px}
+
+    /* Process */
+    .process-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:38px}
+    .step{
+      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);
+      border-radius:22px;padding:22px;position:relative;
+    }
+    .step span{
+      width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#251600;font-weight:900;margin-bottom:14px;
+    }
+    .step h3{color:var(--cream);font-size:1rem;margin-bottom:8px}
+    .step p{color:var(--muted);font-size:.9rem}
+
+    /* Blog */
+    .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+    .post{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);border-radius:22px;overflow:hidden;transition:.25s ease}
+    .post:hover{transform:translateY(-5px);border-color:rgba(215,169,76,.42)}
+    .post img{height:210px;width:100%;object-fit:cover}
+    .post-content{padding:22px}
+    .post-content small{color:var(--gold-2);font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+    .post-content h3{margin:8px 0;color:var(--cream);font-size:1.18rem}
+    .post-content p{color:var(--muted);font-size:.94rem}
+
+    /* Testimonials */
+    .testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+    .quote{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);border-radius:22px;padding:24px}
+    .stars{color:var(--gold-2);letter-spacing:.12em;margin-bottom:12px}
+    .quote p{color:var(--muted);font-style:italic}
+    .quote b{display:block;color:var(--cream);margin-top:16px}
+
+    /* Contact */
+    .contact-wrap{
+      display:grid;grid-template-columns:.95fr 1.05fr;gap:34px;align-items:stretch;margin-top:34px;
+    }
+    .contact-card,.contact-form{
+      border-radius:28px;border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);box-shadow:var(--shadow);padding:30px;
+    }
+    .contact-card img{width:180px;border-radius:22px;margin-bottom:20px;border:1px solid rgba(215,169,76,.25)}
+    .contact-line{display:flex;gap:12px;margin:14px 0;color:var(--muted)}
+    .contact-line strong{color:var(--cream)}
+    form{display:grid;gap:14px}
+    input,textarea,select{
+      width:100%;padding:14px 16px;border-radius:16px;border:1px solid rgba(255,255,255,.12);
+      background:rgba(4,16,34,.62);color:var(--white);outline:none;
+    }
+    textarea{min-height:130px;resize:vertical}
+    input:focus,textarea:focus,select:focus{border-color:rgba(215,169,76,.55)}
+    .form-note{font-size:.86rem;color:var(--muted)}
+
+    footer{
+      padding:34px 0;border-top:1px solid rgba(255,255,255,.10);color:var(--muted);
+      background:rgba(0,0,0,.16);
+    }
+    .footer-content{display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap}
+    .footer-content b{color:var(--cream)}
+
+    .whatsapp-float{
+      position:fixed;right:22px;bottom:22px;z-index:60;
+      width:64px;height:64px;border-radius:50%;display:grid;place-items:center;
+      background:#25d366;color:white;font-size:2rem;box-shadow:0 14px 40px rgba(37,211,102,.35);
+      border:4px solid rgba(255,255,255,.88);
+      transition:.25s ease;
+    }
+    .whatsapp-float:hover{transform:translateY(-4px) scale(1.03)}
+
+    .modal{
+      display:none;position:fixed;inset:0;background:rgba(0,0,0,.86);z-index:100;
+      align-items:center;justify-content:center;padding:24px;
+    }
+    .modal.open{display:flex}
+    .modal img{max-width:min(1100px,95vw);max-height:82vh;border-radius:22px;box-shadow:var(--shadow)}
+    .modal button{position:absolute;top:22px;right:22px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:white;width:48px;height:48px;border-radius:50%;font-size:1.6rem;cursor:pointer}
+
+    @media(max-width: 980px){
+      .hero-grid,.split,.feature-band,.pricing-grid,.contact-wrap{grid-template-columns:1fr}
+      .hero{min-height:auto}
+      .hero-card{transform:none;max-width:640px}
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .gallery-grid{grid-template-columns:repeat(2,1fr)}
+      .gallery-item:nth-child(1){grid-column:span 2;grid-row:span 1}
+      .process-grid{grid-template-columns:repeat(2,1fr)}
+      .blog-grid,.testimonial-grid{grid-template-columns:1fr}
+      .menu{
+        position:absolute;top:78px;left:18px;right:18px;display:none;flex-direction:column;align-items:flex-start;
+        background:rgba(3,10,23,.96);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:20px;
+      }
+      .menu.open{display:flex}
+      .mobile-toggle{display:block}
+      header .btn{display:none}
+    }
+
+    @media(max-width: 640px){
+      .container{width:min(var(--max), calc(100% - 24px))}
+      .hero{padding-top:110px}
+      .hero-actions{flex-direction:column;align-items:stretch}
+      .hero-stats,.cards,.gallery-grid,.mini-grid,.process-grid{grid-template-columns:1fr}
+      .gallery-item:nth-child(1){grid-column:auto}
+      .feature-band{padding:22px;border-radius:24px}
+      th,td{padding:14px 12px;font-size:.9rem}
+      td:last-child{text-align:left}
+      .brand span{display:none}
+      .whatsapp-float{width:56px;height:56px;font-size:1.7rem;right:14px;bottom:14px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Dream Events AMJ">
+        <img src="images/logo.png" alt="Logo Dream Events AMJ" />
+        <span>Dream Events AMJ</span>
+      </a>
+
+      <nav class="menu" id="menu" aria-label="Menú principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#galeria">Galería</a>
+        <a href="#precios">Precios</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <a class="btn btn-primary" href="https://wa.me/50686574048?text=Hola%20Dream%20Events%20AMJ,%20deseo%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener">Cotizar ahora</a>
+      <button class="mobile-toggle" id="toggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Decoración de eventos</span>
+          <h1>Creamos experiencias <em>inolvidables</em></h1>
+          <p>Diseñamos celebraciones elegantes, modernas y personalizadas para bodas, cumpleaños, baby showers, graduaciones y eventos corporativos en Costa Rica.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/50686574048?text=Hola%20Dream%20Events%20AMJ,%20quiero%20cotizar%20mi%20evento" target="_blank" rel="noopener">Solicitar cotización</a>
+            <a class="btn btn-secondary" href="#galeria">Ver galería</a>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="Decoración destacada">
+          <img src="images/decoracion.png" alt="Decoración elegante con flores, luces y fondo para fotografías" />
+          <div class="hero-stats">
+            <div class="stat"><strong>100%</strong><small>Personalizado</small></div>
+            <div class="stat"><strong>24h</strong><small>Cotización</small></div>
+            <div class="stat"><strong>AMJ</strong><small>Calidad</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="nosotros">
+      <div class="container split">
+        <div class="image-frame">
+          <img src="images/evento1.png" alt="Decoración de boda con flores, luces cálidas y mobiliario elegante" />
+        </div>
+        <div>
+          <span class="eyebrow">Nuestra esencia</span>
+          <h2 class="section-title">Transformamos espacios en recuerdos</h2>
+          <p class="section-text">Dream Events AMJ nace con el propósito de ofrecer un servicio profesional de decoración para eventos, combinando creatividad, elegancia y atención al detalle. Cada montaje se diseña según el estilo, la temática y el presupuesto de nuestros clientes.</p>
+          <div class="about-list">
+            <div class="about-item"><span class="check">✓</span><p><b>Diseños personalizados:</b> adaptamos colores, temática y elementos decorativos a cada celebración.</p></div>
+            <div class="about-item"><span class="check">✓</span><p><b>Acompañamiento completo:</b> asesoramos desde la idea inicial hasta el montaje final.</p></div>
+            <div class="about-item"><span class="check">✓</span><p><b>Experiencias memorables:</b> creamos espacios listos para disfrutar, celebrar y fotografiar.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="servicios">
+      <div class="container">
+        <span class="eyebrow">Servicios</span>
+        <h2 class="section-title">Todo para tu celebración</h2>
+        <p class="section-text">Ofrecemos decoración integral y elementos especiales para que cada evento tenga una identidad única, elegante y coherente con la ocasión.</p>
+
+        <div class="cards">
+          <article class="card">
+            <div class="icon">💍</div>
+            <h3>Bodas</h3>
+            <p>Decoraciones románticas, fondos florales, iluminación cálida y ambientes elegantes para ceremonias y recepciones.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🎂</div>
+            <h3>Cumpleaños</h3>
+            <p>Montajes temáticos, mesas principales, globos, backings y espacios especiales para fotografías.</p>
+          </article>
+          <article class="card">
+            <div class="icon">👶</div>
+            <h3>Baby Shower</h3>
+            <p>Diseños tiernos, modernos y personalizados para celebrar la llegada de un nuevo integrante de la familia.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🎓</div>
+            <h3>Graduaciones</h3>
+            <p>Escenarios elegantes para celebrar logros académicos con letras luminosas, globos y detalles conmemorativos.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🏢</div>
+            <h3>Eventos corporativos</h3>
+            <p>Ambientaciones profesionales para lanzamientos, aniversarios, cenas empresariales y actividades institucionales.</p>
+          </article>
+          <article class="card">
+            <div class="icon">✨</div>
+            <h3>Letras luminosas</h3>
+            <p>Letras, números y palabras decorativas para destacar nombres, edades, iniciales y mensajes especiales.</p>
+          </article>
+          <article class="card">
+            <div class="icon">📸</div>
+            <h3>Fondos para fotos</h3>
+            <p>Escenarios diseñados para fotografías, recuerdos y contenido visual para redes sociales.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🎈</div>
+            <h3>Globos y mobiliario</h3>
+            <p>Arcos orgánicos, pedestales, mesas decorativas, sillas, estructuras y accesorios según disponibilidad.</p>
+          </article>
+        </div>
+
+        <div class="feature-band">
+          <div>
+            <h3>Letras y fondos que resaltan tu evento</h3>
+            <p>Los detalles visuales son clave para crear una experiencia memorable. Por eso ofrecemos letras luminosas, fondos fotográficos y decoraciones que se convierten en el centro de atención de cada celebración.</p>
+          </div>
+          <div class="mini-grid">
+            <img src="images/letras.png" alt="Letras luminosas para eventos" />
+            <img src="images/globos.png" alt="Decoración de cumpleaños con globos y luces" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <div class="container">
+        <span class="eyebrow">Galería</span>
+        <h2 class="section-title">Inspiración para tu próximo evento</h2>
+        <p class="section-text">Explora diferentes estilos de decoración. Cada imagen representa una idea que puede adaptarse a tus colores, temática, espacio y presupuesto.</p>
+
+        <div class="filters" aria-label="Filtros de galería">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="boda">Bodas</button>
+          <button class="filter-btn" data-filter="cumple">Cumpleaños</button>
+          <button class="filter-btn" data-filter="baby">Baby Shower</button>
+          <button class="filter-btn" data-filter="especial">Especiales</button>
+        </div>
+
+        <div class="gallery-grid">
+          <article class="gallery-item" data-category="especial">
+            <img src="images/decoracion.png" alt="Fondo fotográfico con flores y luces" />
+            <div class="overlay"><h3>Fondos para fotografías</h3><p>Espacios elegantes para capturar recuerdos.</p></div>
+          </article>
+          <article class="gallery-item" data-category="boda">
+            <img src="images/evento1.png" alt="Decoración de boda elegante con flores y luces" />
+            <div class="overlay"><h3>Boda romántica</h3><p>Flores, velas y telas en tonos suaves.</p></div>
+          </article>
+          <article class="gallery-item" data-category="baby">
+            <img src="images/evento2.png" alt="Baby shower en tonos pastel" />
+            <div class="overlay"><h3>Baby Shower</h3><p>Un ambiente tierno, fresco y familiar.</p></div>
+          </article>
+          <article class="gallery-item" data-category="cumple">
+            <img src="images/evento3.png" alt="Cumpleaños temático estilo princesa" />
+            <div class="overlay"><h3>Cumpleaños temático</h3><p>Decoraciones mágicas para celebrar.</p></div>
+          </article>
+          <article class="gallery-item" data-category="boda">
+            <img src="images/evento4.png" alt="Boda elegante en tonos azul, blanco y dorado" />
+            <div class="overlay"><h3>Recepción elegante</h3><p>Detalles de lujo para eventos formales.</p></div>
+          </article>
+          <article class="gallery-item" data-category="cumple">
+            <img src="images/globos.png" alt="Decoración de cumpleaños con globos y detalles dorados" />
+            <div class="overlay"><h3>Globos premium</h3><p>Arcos orgánicos y colores personalizados.</p></div>
+          </article>
+          <article class="gallery-item" data-category="especial">
+            <img src="images/letras.png" alt="Collage de letras luminosas" />
+            <div class="overlay"><h3>Letras luminosas</h3><p>Mensajes, iniciales y números para destacar.</p></div>
+          </article>
+          <article class="gallery-item" data-category="especial">
+            <img src="images/principal.png" alt="Decoración elegante azul, negro y dorado" />
+            <div class="overlay"><h3>Eventos especiales</h3><p>Ambientes sofisticados y personalizados.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="precios">
+      <div class="container">
+        <span class="eyebrow">Cotizaciones</span>
+        <h2 class="section-title">Precios básicos de referencia</h2>
+        <p class="section-text">Cada evento es único. Los siguientes precios son una base para decoraciones sencillas; el costo final se define mediante una cotización personalizada según el tamaño, ubicación, materiales, temática y nivel de personalización.</p>
+
+        <div class="pricing-grid">
+          <div class="price-table">
+            <table aria-label="Precios básicos de Dream Events AMJ">
+              <thead>
+                <tr><th>Servicio</th><th>Precio básico desde</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Decoración para cumpleaños</td><td>₡85 000</td></tr>
+                <tr><td>Decoración para Baby Shower</td><td>₡95 000</td></tr>
+                <tr><td>Decoración para graduaciones</td><td>₡90 000</td></tr>
+                <tr><td>Decoración para bodas</td><td>₡250 000</td></tr>
+                <tr><td>Eventos corporativos</td><td>₡180 000</td></tr>
+                <tr><td>Alquiler de letras luminosas</td><td>₡35 000</td></tr>
+                <tr><td>Fondo para fotografías</td><td>₡65 000</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <aside class="notice">
+            <h3>Importante</h3>
+            <p>Los precios indicados corresponden a paquetes básicos con decoraciones o productos sencillos. No representan el precio definitivo de un evento personalizado.</p>
+            <p>Si deseas flores naturales, estructuras especiales, mobiliario adicional, iluminación profesional, temáticas exclusivas, montaje en otra zona o mayor cantidad de elementos decorativos, el precio será ajustado mediante cotización.</p>
+            <a class="btn btn-primary" href="https://wa.me/50686574048?text=Hola%20Dream%20Events%20AMJ,%20deseo%20una%20cotizaci%C3%B3n%20personalizada" target="_blank" rel="noopener">Cotizar mi evento</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="proceso">
+      <div class="container">
+        <span class="eyebrow">Proceso</span>
+        <h2 class="section-title">Así trabajamos tu evento</h2>
+        <p class="section-text">Buscamos que el proceso sea claro, ordenado y cómodo para nuestros clientes desde el primer contacto.</p>
+        <div class="process-grid">
+          <div class="step"><span>1</span><h3>Contacto</h3><p>Nos escribes por WhatsApp o formulario y nos cuentas tu idea.</p></div>
+          <div class="step"><span>2</span><h3>Asesoría</h3><p>Definimos fecha, lugar, temática, colores y necesidades.</p></div>
+          <div class="step"><span>3</span><h3>Cotización</h3><p>Preparamos una propuesta acorde al evento y presupuesto.</p></div>
+          <div class="step"><span>4</span><h3>Reserva</h3><p>Confirmamos la fecha y los elementos decorativos requeridos.</p></div>
+          <div class="step"><span>5</span><h3>Montaje</h3><p>Realizamos la instalación y desmontaje según lo acordado.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog">
+      <div class="container">
+        <span class="eyebrow">Ideas para celebrar</span>
+        <h2 class="section-title">Consejos para planear tu evento</h2>
+        <p class="section-text">Una decoración exitosa inicia con una buena planificación. Estos consejos ayudan a elegir mejor el estilo de tu celebración.</p>
+        <div class="blog-grid">
+          <article class="post">
+            <img src="images/evento2.png" alt="Baby shower pastel" />
+            <div class="post-content"><small>Inspiración</small><h3>Cómo elegir la temática perfecta</h3><p>Define colores, edad, gustos y tipo de celebración para lograr una decoración coherente.</p></div>
+          </article>
+          <article class="post">
+            <img src="images/decoracion.png" alt="Fondo con flores para fotografías" />
+            <div class="post-content"><small>Fotografía</small><h3>La importancia del fondo para fotos</h3><p>Un espacio fotográfico bien diseñado se convierte en uno de los recuerdos más compartidos.</p></div>
+          </article>
+          <article class="post">
+            <img src="images/letras.png" alt="Letras luminosas para eventos" />
+            <div class="post-content"><small>Detalles</small><h3>Letras luminosas para destacar</h3><p>Las letras y números iluminados aportan elegancia, personalidad y un punto focal al montaje.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="opiniones">
+      <div class="container">
+        <span class="eyebrow">Confianza</span>
+        <h2 class="section-title">Lo que buscamos en cada evento</h2>
+        <p class="section-text">Nuestro compromiso es que cada cliente reciba un servicio responsable, creativo y adaptado a sus expectativas.</p>
+        <div class="testimonial-grid">
+          <article class="quote"><div class="stars">★★★★★</div><p>“Atención cercana, diseño personalizado y un montaje que refleja exactamente lo que el cliente imagina.”</p><b>Experiencia personalizada</b></article>
+          <article class="quote"><div class="stars">★★★★★</div><p>“Cada detalle se selecciona para que el evento luzca elegante y sea recordado por todos los invitados.”</p><b>Calidad visual</b></article>
+          <article class="quote"><div class="stars">★★★★★</div><p>“La decoración no solo embellece el espacio, también crea emociones y recuerdos memorables.”</p><b>Valor emocional</b></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="container">
+        <span class="eyebrow">Contacto</span>
+        <h2 class="section-title">Hablemos de tu próximo evento</h2>
+        <p class="section-text">Cuéntanos tu idea y con gusto te ayudamos a crear una propuesta decorativa personalizada.</p>
+
+        <div class="contact-wrap">
+          <div class="contact-card">
+            <img src="images/logo.png" alt="Logo Dream Events AMJ" />
+            <h3>Dream Events AMJ</h3>
+            <div class="contact-line"><span>📍</span><p><strong>Ubicación:</strong><br>Costa Rica</p></div>
+            <div class="contact-line"><span>📱</span><p><strong>WhatsApp:</strong><br><a href="https://wa.me/50686574048" target="_blank" rel="noopener">8657-4048</a></p></div>
+            <div class="contact-line"><span>✉️</span><p><strong>Correo:</strong><br><a href="mailto:dreameventsamj@gmail.com">dreameventsamj@gmail.com</a></p></div>
+            <div class="contact-line"><span>🕒</span><p><strong>Recomendación:</strong><br>Reservar con 15 a 30 días de anticipación.</p></div>
+          </div>
+
+          <div class="contact-form">
+            <form id="quoteForm">
+              <input type="text" id="nombre" placeholder="Nombre completo" required />
+              <input type="tel" id="telefono" placeholder="Teléfono o WhatsApp" required />
+              <select id="tipo" required>
+                <option value="">Tipo de evento</option>
+                <option>Boda</option>
+                <option>Cumpleaños</option>
+                <option>Baby Shower</option>
+                <option>Graduación</option>
+                <option>Evento corporativo</option>
+                <option>Letras luminosas</option>
+                <option>Fondo para fotos</option>
+              </select>
+              <input type="date" id="fecha" />
+              <textarea id="mensaje" placeholder="Cuéntanos tu idea, lugar, cantidad de invitados, colores o temática"></textarea>
+              <button type="submit" class="btn btn-primary">Enviar por WhatsApp</button>
+              <p class="form-note">Este formulario abre WhatsApp con tu mensaje listo para enviar.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <p><b>Dream Events AMJ</b> © 2026. Creamos experiencias inolvidables.</p>
+      <p>Decoración de eventos · Letras luminosas · Fondos para fotos</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/50686574048?text=Hola%20Dream%20Events%20AMJ,%20necesito%20informaci%C3%B3n" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">☏</a>
+
+  <div class="modal" id="modal" aria-label="Vista ampliada de imagen">
+    <button id="closeModal" aria-label="Cerrar imagen">×</button>
+    <img id="modalImage" alt="Imagen ampliada de evento" />
+  </div>
+
+  <script>
+    const toggle = document.getElementById('toggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => menu.classList.toggle('open'));
+    document.querySelectorAll('.menu a').forEach(link => {
+      link.addEventListener('click', () => menu.classList.remove('open'));
+    });
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        const filter = button.dataset.filter;
+        galleryItems.forEach(item => {
+          item.style.display = (filter === 'all' || item.dataset.category === filter) ? 'block' : 'none';
+        });
+      });
+    });
+
+    const modal = document.getElementById('modal');
+    const modalImage = document.getElementById('modalImage');
+    const closeModal = document.getElementById('closeModal');
+    document.querySelectorAll('.gallery-item img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImage.src = img.src;
+        modalImage.alt = img.alt;
+        modal.classList.add('open');
+      });
+    });
+    closeModal.addEventListener('click', () => modal.classList.remove('open'));
+    modal.addEventListener('click', (e) => { if(e.target === modal) modal.classList.remove('open'); });
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape') modal.classList.remove('open'); });
+
+    const form = document.getElementById('quoteForm');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value.trim();
+      const telefono = document.getElementById('telefono').value.trim();
+      const tipo = document.getElementById('tipo').value;
+      const fecha = document.getElementById('fecha').value;
+      const mensaje = document.getElementById('mensaje').value.trim();
+      const texto = `Hola Dream Events AMJ, deseo una cotización.%0A%0ANombre: ${encodeURIComponent(nombre)}%0ATeléfono: ${encodeURIComponent(telefono)}%0ATipo de evento: ${encodeURIComponent(tipo)}%0AFecha: ${encodeURIComponent(fecha || 'Por definir')}%0ADetalles: ${encodeURIComponent(mensaje || 'Quiero recibir asesoría para mi evento.')}`;
+      window.open(`https://wa.me/50686574048?text=${texto}`, '_blank');
+    });
+  </script>
+</body>
+</html>
